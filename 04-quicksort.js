@@ -7,3 +7,13 @@ function sum(array) {
 }
 
 console.log(sum([1, 2, 3, 4]));
+
+// Uses reduce method
+
+function sumReduce(array) {
+    return array.reduce(function(previous, current) {
+        return previous + current;
+    });
+}
+
+console.log(sumReduce([1, 2, 3, 4]));
