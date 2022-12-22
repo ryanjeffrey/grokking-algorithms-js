@@ -26,3 +26,14 @@ function sumRecursive(array) {
 }
 
 console.log(sumRecursive([10, 20, 30, 40]));
+
+////////////////
+
+// Count the number of elements in the array using recursion
+
+function count(array) {
+    if (array.length === 0) return 0;
+    return 1 + count(array.slice(1));
+}
+
+console.log(count([0, 1, 2, 3, 4, 5]));
