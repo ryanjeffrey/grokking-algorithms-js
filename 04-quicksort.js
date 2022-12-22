@@ -37,3 +37,17 @@ function count(array) {
 }
 
 console.log(count([0, 1, 2, 3, 4, 5]));
+
+////////////////
+
+// Return the largest number in an array
+
+function max(array) {
+    if (array.length === 2) return array[0] > array[1] ? array[0] : array[1];
+    let subMax = max(array.slice(1));
+    // console.log('subMax: ' + subMax)
+    return array[0] > subMax ? array[0] : subMax;
+}
+
+console.log(max([1, 5, 10, 25, 16, 1, 401, -24]));
+console.log(max([10, 50000, 1, 30, 20, 21, 22, -500]));
