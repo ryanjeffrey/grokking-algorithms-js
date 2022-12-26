@@ -51,3 +51,26 @@ function max(array) {
 
 console.log(max([1, 5, 10, 25, 16, 1, 401, -24]));
 console.log(max([10, 50000, 1, 30, 20, 21, 22, -500]));
+
+////////////////
+
+// Quick array sorting
+
+function quicksort(array) {
+    // base case (arrays with 0 or 1 element are already sorted)
+    if (array.length < 2) return array;
+    // recursive case
+    let pivot = array[0];
+    // sub-array of all the elements less than the pivot
+    let less = array.slice(1).filter(function(element) {
+        return element <= pivot;
+    });
+    // sub-array of all the elements greater than the pivot
+    let greater = array.slice(1).filter(function(element) {
+        return element > pivot;
+    });
+
+    return quicksort(less).concat([pivot], quicksort(greater));
+}
+
+console.log(quicksort([20, 300, 3, 1, -50, 0]));
